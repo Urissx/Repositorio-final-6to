@@ -1,0 +1,22 @@
+{% extends "index.html" %}
+{% block content %}
+
+<div class="container mt-4">
+<h2>Torneos</h2>
+
+{% for t in tournaments %}
+<div class="card mt-3">
+<div class="card-body">
+<h5>{{ t[1] }}</h5>
+<p>Juego: {{ t[2] }}</p>
+<p>Formato: {{ t[3] }}</p>
+<p>Premio: {{ t[5] }}</p>
+
+<a href="/join/{{ t[0] }}" class="btn btn-primary">Unirse</a>
+</div>
+</div>
+{% endfor %}
+
+</div>
+
+{% endblock %}
