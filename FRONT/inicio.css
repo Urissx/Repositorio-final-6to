@@ -47,3 +47,95 @@ body {
 .dropdown-item:hover {
     background-color: #333;
 }
+.Title {
+    font-family: 'Comic Neue', cursive;
+    color: purple;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 50px; 
+}
+
+.viewport {
+    width: 800px;
+    overflow: hidden;
+}
+
+.track {
+    display: flex;
+    transition: transform 0.4s ease-in-out;
+    width: max-content
+}
+
+.game {
+    width: 200px;  
+    height: 120px;
+    margin: 5px;
+    background: #222;
+    border-radius: 10px;
+    overflow: hidden; 
+    flex-shrink: 0;
+}
+
+.game img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.arrow {
+    background: rgba(0, 0, 0, 0.7); /* Un negro con un poco de transparencia queda elegante */
+    color: white;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 50%; /* Flechas circulares */
+    margin: 0 15px;      /* Separa un poco las flechas de los juegos */
+    transition: background 0.3s;
+}
+
+.arrow:hover {
+    background: purple; /* Cambia a púrpura al pasar el mouse como tu título */
+}
+#suggestions {
+    position: absolute;
+    top: 100%; /* Justo debajo del input */
+    left: 0;
+    width: calc(100% - 110px); /* Ajusta al ancho del input */
+    background-color: #333;
+    border: 1px solid #444;
+    max-height: 200px;
+    overflow-y: auto;
+    display: none; /* Oculto por defecto */
+    z-index: 1000;
+}
+
+.suggestion-item {
+    padding: 10px;
+    color: white;
+    cursor: pointer;
+    border-bottom: 1px solid #444;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.suggestion-item:hover {
+    background-color: purple;
+}
+
+.suggestion-item img {
+    width: 40px;
+    height: 25px;
+    object-fit: cover;
+    border-radius: 4px;
+}
