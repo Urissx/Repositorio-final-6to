@@ -15,3 +15,35 @@ body {
     height: auto;
     display: block;
 }
+
+.navbar {
+    padding-left: 0;
+    padding-top: 0;
+    background-color: #222; /* el color que quieras */
+}
+
+.navbar .nav-link {
+    color: white;
+}
+
+.btn-outline-success {
+    color: white;
+    border-color: white;
+}
+
+.btn-outline-success:hover {
+    background-color: white;
+    color: black;
+}
+
+.dropdown-menu {
+    background-color: #000;
+}
+
+.dropdown-item {
+    color: white;
+}
+
+.dropdown-item:hover {
+    background-color: #333;
+}
