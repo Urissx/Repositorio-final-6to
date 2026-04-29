@@ -106,3 +106,24 @@ body {
 .arrow:hover {
     background: purple; /* Cambia a púrpura al pasar el mouse como tu título */
 }
+/* Reseteo para que el botón herede la estética del div original */
+button.game {
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline: none;
+    background: #222; /* Mantener tu fondo oscuro */
+    transition: transform 0.3s ease, filter 0.3s;
+}
+
+/* Efecto visual al pasar el ratón por encima del botón-juego */
+button.game:hover {
+    transform: scale(1.05);
+    filter: brightness(1.2);
+    box-shadow: 0 0 15px purple; /* Brillo púrpura como tu título */
+}
+
+/* Efecto cuando haces click (feedback) */
+button.game:active {
+    transform: scale(0.95);
+}

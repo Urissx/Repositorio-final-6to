@@ -1,39 +1,43 @@
-const track = document.getElementById("track");
-let isMoving = false; // Bloqueo para evitar bugs si clickean muy rápido
+let isMoving = false;
 
-function moveCarousel(direction) {
-    if (isMoving) return; // Si está animando, no hace nada
+// Añadimos el parámetro 'trackId'
+function moveCarousel(direction, trackId) {
+    if (isMoving) return;
     isMoving = true;
 
-    const gameWidth = document.querySelector(".game").offsetWidth + 10; // Ancho + margen
+    // Buscamos el track específico que se clickeó
+    const track = document.getElementById(trackId);
+    const gameWidth = track.querySelector(".game").offsetWidth + 10; 
 
     if (direction === 1) {
-        // --- HACIA LA DERECHA (Siguiente) ---
         track.style.transition = "transform 0.4s ease-in-out";
         track.style.transform = `translateX(-${gameWidth}px)`;
 
-        // Cuando termina la animación, movemos el primer hijo al final
         setTimeout(() => {
-            track.style.transition = "none"; // Quitamos animación para resetear
-            track.appendChild(track.firstElementChild); // Mueve el 1ro al final
-            track.style.transform = `translateX(0)`; // Resetea posición del track
+            track.style.transition = "none";
+            track.appendChild(track.firstElementChild);
+            track.style.transform = `translateX(0)`;
             isMoving = false;
         }, 400);
-
     } else {
-        // --- HACIA LA IZQUIERDA (Anterior) ---
-        // 1. Antes de animar, movemos el último al principio (sin que se vea)
         track.style.transition = "none";
         track.prepend(track.lastElementChild);
-        
-        // 2. Lo movemos visualmente a la izquierda para que "aparezca" por la izquierda
         track.style.transform = `translateX(-${gameWidth}px)`;
 
-        // 3. Animamos hacia la posición 0
         setTimeout(() => {
             track.style.transition = "transform 0.4s ease-in-out";
             track.style.transform = `translateX(0)`;
             setTimeout(() => { isMoving = false; }, 400);
         }, 10);
+    }
+}
+function irAlJuego(elemento) {
+    // Obtenemos la URL del atributo data-url
+    const url = elemento.getAttribute("data-url");
+    
+    if (url) {
+        window.location.href = url; // Redirige a la página
+    } else {
+        console.error("No se definió una URL para este juego");
     }
 }
