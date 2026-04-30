@@ -48,8 +48,6 @@ body {
     background-color: #333;
 }
 .Title {
-    font-family: 'Comic Neue', cursive;
-    color: purple;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -126,4 +124,74 @@ button.game:hover {
 /* Efecto cuando haces click (feedback) */
 button.game:active {
     transform: scale(0.95);
+}
+/* Contenedor principal que ignora márgenes de Bootstrap */
+.xbox-hero {
+    display: flex;
+    width: 100%;
+    height: 100vh; /* 100% del alto de la pantalla */
+    position: relative;
+    overflow: hidden;
+}
+
+/* El panel del 35% horizontal */
+.xbox-image-panel {
+    flex: 0 0 35%; /* 35% exacto */
+    height: 100%;
+}
+
+.xbox-poster {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Evita que la imagen se estire */
+    /* Efecto Xbox: un pequeño degradado a la derecha para fundirse con el fondo */
+    mask-image: linear-gradient(to right, black 90%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, black 90%, transparent 100%);
+}
+
+/* Lado derecho con el texto */
+.xbox-details {
+    flex: 1;
+    padding: 80px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Alinea arriba */
+    color: white;
+}
+
+.xbox-title {
+    font-family: 'Comic Neue', sans-serif;
+    font-size: clamp(2rem, 5vw, 4rem); /* Tamaño fluido según pantalla */
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+}
+
+.xbox-description {
+    font-size: 1.2rem;
+    max-width: 600px;
+    color: #cccccc;
+    margin-bottom: 30px;
+}
+
+/* Botón estilo Xbox Cloud */
+.xbox-main-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    width: fit-content;
+    padding: 12px 35px;
+    background-color: #107c10; /* El verde oficial de Xbox */
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: all 0.2s ease-in-out;
+}
+
+.xbox-main-button:hover {
+    background-color: #1a9d1a;
+    transform: scale(1.05);
+    color: white;
 }
