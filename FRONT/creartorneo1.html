@@ -31,15 +31,15 @@
         .navbar {
             background-color: var(--bg-color);
             border-bottom: 1px solid #333;
-            padding: 0.5rem 1rem;
+            padding: 1rem 1rem;
         }
         .Title { 
             font-family: 'Comic Neue', cursive; 
             color: white; 
             margin: 0 15px 0 0;
-            font-size: 1.5rem;
+            font-size: 2rem;
         }
-        .logo { width: 40px; height: auto; }
+        .logo { width: 50px; height: auto; }
 
         /* Contenedor Principal para centrar la tarjeta */
         .main-container {
@@ -64,14 +64,14 @@
         
         .google-logo-text {
             font-family: 'Google Sans', sans-serif;
-            font-size: 22px;
+            font-size: 28px;
             font-weight: 500;
             margin-bottom: 8px;
         }
 
         h1.form-title {
             font-family: 'Google Sans', sans-serif;
-            font-size: 24px;
+            font-size: 32px;
             font-weight: 400;
             margin-bottom: 8px;
         }
@@ -115,35 +115,34 @@
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container-fluid">
-            <h1 class="Title">Storm Game</h1>
-            <a class="navbar-brand" href="#">
-                <img src="./Logo.png" alt="Logo" class="logo">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"> Menu </a>
-                        <ul class="dropdown-menu dropdown-menu-dark">
-                            <li><a class="dropdown-item" href="perfil.html">Perfil</a></li>
-                            <li><a class="dropdown-item" href="config.html">Configuración</a></li>
-                            <li><a class="dropdown-item" href="stats.html">Estadísticas</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="ayuda.html">Ayuda</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Buscar">
-                    <button class="btn btn-outline-light" type="submit">Search</button>
-                </form>
-            </div>
+ <nav class="navbar navbar-expand-lg">
+    <img class="Title" src="Storm-Game.png" alt="">
+    <div class="container-fluid">
+        <a class="navbar-brand logo-link" href="#">
+            <img src="./Logo.png" alt="Logo" class="logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false"> = </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="perfil.html">perfil</a></li>
+                        <li><a class="dropdown-item" href="config.html">configuracion</a></li>
+                        <li><a class="dropdown-item" href="stats.html">estadisticas</a></li>
+                        <li><a class="dropdown-item" href="ayuda.html">ayuda</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
         </div>
-    </nav>
+    </div>
+</nav>
 
     <main class="main-container">
         <div class="card-google">
