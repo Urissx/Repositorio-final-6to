@@ -1,0 +1,102 @@
+:root {
+            --bg-color: #131314;
+            --card-bg: #1e1f20;
+            --text-primary: #e3e3e3;
+            --accent-blue: #a8c7fa;
+            --input-border: #444746;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column; /* Permite que la nav esté arriba y el contenido abajo */
+        }
+
+        /* Navbar Custom */
+        .navbar {
+            background-color: var(--bg-color);
+            border-bottom: 1px solid #333;
+            padding: 0.5rem 1rem;
+        }
+        .Title { 
+            font-family: 'Comic Neue', cursive; 
+            color: white; 
+            margin: 0 15px 0 0;
+            font-size: 1.5rem;
+        }
+        .logo { width: 40px; height: auto; }
+
+        /* Contenedor Principal para centrar la tarjeta */
+        .main-container {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        /* Tarjeta Compacta Estilo Google */
+        .card-google {
+            background-color: var(--card-bg);
+            width: 100%;
+            max-width: 450px; /* Tamaño compacto */
+            padding: 32px;
+            border-radius: 24px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+        }
+
+        .header-section { text-align: center; margin-bottom: 24px; }
+        
+        .google-logo-text {
+            font-family: 'Google Sans', sans-serif;
+            font-size: 22px;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        h1.form-title {
+            font-family: 'Google Sans', sans-serif;
+            font-size: 24px;
+            font-weight: 400;
+            margin-bottom: 8px;
+        }
+
+        /* Inputs Estilizados */
+        .input-group-custom {
+            margin-bottom: 16px;
+        }
+
+        .input-group-custom input {
+            width: 100%;
+            padding: 12px 16px;
+            background: transparent;
+            border: 1px solid var(--input-border);
+            border-radius: 8px;
+            color: white;
+            font-size: 15px;
+            outline: none;
+            transition: border 0.2s;
+        }
+
+        .input-group-custom input:focus {
+            border: 2px solid var(--accent-blue);
+            padding: 11px 15px;
+        }
+
+        .btn-google {
+            background-color: var(--accent-blue);
+            color: #062e6f;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 20px;
+            font-weight: 500;
+            font-size: 14px;
+            cursor: pointer;
+            float: right;
+        }
+
+        .btn-google:hover { opacity: 0.9; }
