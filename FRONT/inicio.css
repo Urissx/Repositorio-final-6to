@@ -88,9 +88,32 @@ body {
     object-fit: cover;
     display: block;
 }
+.btn-crear-torneo {
+    width: 180px !important; 
+    height: 60px !important;  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+    font-family: 'Comic Neue', sans-serif;
+    font-weight: bold;
+    font-size: 1.1rem;
+    border: 2px solid purple;
+}
+
+.texto-torneo {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-crear-torneo:hover {
+    box-shadow: 0 0 20px purple;
+    background-color: #333;
+}
 
 .arrow {
-    background: rgba(0, 0, 0, 0.7); /* Un negro con un poco de transparencia queda elegante */
+    background: rgba(0, 0, 0, 0.7); 
     color: white;
     border: none;
     font-size: 24px;
