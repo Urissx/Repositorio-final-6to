@@ -1,3 +1,11 @@
+:root {
+    --bg-color: #131314;
+    --card-bg: #1e1f20;
+    --text-primary: #e3e3e3;
+    --accent-blue: #a8c7fa;
+    --input-border: #444746;
+}
+
 body {
     background-color: gray;
 }
@@ -36,16 +44,34 @@ body {
     color: black;
 }
 
+/* --- Dropdown Estilo Google (CSS 1) --- */
+
 .dropdown-menu {
-    background-color: #000;
+    background-color: var(--card-bg) !important; /* El color de la tarjeta del CSS 1 */
+    border: 1px solid var(--input-border) !important;
+    border-radius: 16px !important; /* Bordes más redondeados y modernos */
+    box-shadow: 0 8px 24px rgba(0,0,0,0.5) !important; /* Sombra profunda del CSS 1 */
+    padding: 8px !important;
+    margin-top: 10px !important; /* Separación de la navbar */
 }
 
 .dropdown-item {
-    color: white;
+    color: var(--text-primary) !important;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    padding: 10px 16px !important;
+    border-radius: 8px !important; /* Redondea los ítems al pasar el mouse */
+    transition: background-color 0.2s ease;
 }
 
 .dropdown-item:hover {
-    background-color: #333;
+    background-color: #333537 !important; /* Un gris sutil para el hover */
+    color: var(--accent-blue) !important; /* Texto azul claro al resaltar */
+}
+
+/* Flechita del dropdown (opcional, para que combine) */
+.dropdown-toggle::after {
+    color: var(--text-primary);
 }
 .Title {
     position: absolute;

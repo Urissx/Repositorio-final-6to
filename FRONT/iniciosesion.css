@@ -1,11 +1,10 @@
 :root {
-            --bg-color: #131314;
-            --card-bg: #1e1f20;
-            --text-primary: #e3e3e3;
-            --accent-blue: #a8c7fa;
-            --input-border: #444746;
-        }
-
+    --bg-color: #131314;
+    --card-bg: #1e1f20;
+    --text-primary: #e3e3e3;
+    --accent-blue: #a8c7fa;
+    --input-border: #444746;
+}
         body {
             background-color: var(--bg-color);
             color: var(--text-primary);
@@ -22,13 +21,28 @@
             border-bottom: 1px solid #333;
             padding: 0.5rem 1rem;
         }
-        .Title { 
-            font-family: 'Comic Neue', cursive; 
-            color: white; 
-            margin: 0 15px 0 0;
-            font-size: 1.5rem;
-        }
-        .logo { width: 40px; height: auto; }
+        /* --- Modificación del Logo CSS 1 para que sea como el CSS 2 --- */
+
+.logo {
+    width: 90px;        /* Cambiado de 40px a 100px */
+    height: auto;
+    display: block;      /* Asegura que se comporte como bloque */
+}
+
+/* Ajuste adicional para el link del logo si usas la estructura del CSS 2 */
+.logo-link {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+}
+
+/* El título 'Title' en el CSS 2 suele estar posicionado absoluto 
+   o centrado, asegúrate de que coincida así: */
+.Title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
 
         /* Contenedor Principal para centrar la tarjeta */
         .main-container {
@@ -69,6 +83,35 @@
         .input-group-custom {
             margin-bottom: 16px;
         }
+        /* --- Dropdown Estilo Google (CSS 1) --- */
+
+.dropdown-menu {
+    background-color: var(--card-bg) !important; /* El color de la tarjeta del CSS 1 */
+    border: 1px solid var(--input-border) !important;
+    border-radius: 16px !important; /* Bordes más redondeados y modernos */
+    box-shadow: 0 8px 24px rgba(0,0,0,0.5) !important; /* Sombra profunda del CSS 1 */
+    padding: 8px !important;
+    margin-top: 10px !important; /* Separación de la navbar */
+}
+
+.dropdown-item {
+    color: var(--text-primary) !important;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    padding: 10px 16px !important;
+    border-radius: 8px !important; /* Redondea los ítems al pasar el mouse */
+    transition: background-color 0.2s ease;
+}
+
+.dropdown-item:hover {
+    background-color: #333537 !important; /* Un gris sutil para el hover */
+    color: var(--accent-blue) !important; /* Texto azul claro al resaltar */
+}
+
+/* Flechita del dropdown (opcional, para que combine) */
+.dropdown-toggle::after {
+    color: var(--text-primary);
+}
 
         .input-group-custom input {
             width: 100%;
