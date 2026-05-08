@@ -9,7 +9,7 @@
 body {
     background-color: #333;
 }
-#Subtitulo{  
+#Subtitulo, #Subtitulo2 {  
     display: flex;
     align-items: center;
     justify-content: center;
@@ -17,18 +17,20 @@ body {
     color: white;
     font-family: 'Comic Neue', sans-serif;
     font-weight: bold;
-    margin-bottom: 0;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+    margin-bottom: 0; 
 }
-#Subtitulo2{  
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    color: white;
-    font-family: 'Comic Neue', sans-serif;
-    font-weight: bold;
-    margin-bottom: 0;
-    margin-top: 0%;
+
+#Subtitulo {
+    margin-top: 40px; /* Espacio arriba del primer grupo */
+}
+
+#Subtitulo2 {
+    margin-top: 80px;
+    margin-bottom: 5px; 
 }
 .navbar {
     padding-left: 0;
@@ -105,7 +107,7 @@ body {
     align-items: center;
     justify-content: center;
     width: 100%;
-    margin-top: 50px; 
+    margin-top: 0px; 
 }
 
 .viewport {
@@ -261,23 +263,24 @@ button.game:active {
     margin-bottom: 30px;
 }
 
-/* Botón estilo Xbox Cloud */
 .xbox-main-button {
     display: inline-flex;
     align-items: center;
     gap: 10px;
     width: fit-content;
     padding: 12px 35px;
-    background-color: #107c10; /* El verde oficial de Xbox */
+    background-color: black;
     color: white;
     text-decoration: none;
     font-weight: bold;
     border-radius: 4px;
     transition: all 0.2s ease-in-out;
+    border: 2px solid purple;
 }
 
 .xbox-main-button:hover {
-    background-color: #1a9d1a;
     transform: scale(1.05);
     color: white;
+    box-shadow: 0 0 20px purple;
+    background-color: #333;
 }
