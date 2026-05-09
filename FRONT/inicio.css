@@ -57,14 +57,19 @@ body {
     color: white;
 }
 
-.btn-outline-success {
+.btn-outline-success { 
+    display: flex;
+    text-decoration: none;
     color: white;
-    border-color: white;
+    font-family: 'Comic Neue', sans-serif;
+    font-weight: bold;
+    border: 2px solid purple;
 }
 
 .btn-outline-success:hover {
-    background-color: white;
-    color: black;
+    box-shadow: 0 0 20px purple;
+    background-color: #333;
+    border-color: purple;
 }
 
 /* --- Dropdown Estilo Google (CSS 1) --- */
