@@ -142,6 +142,26 @@ body {
     object-fit: cover;
     display: block;
 }
+/* Contenedor del logo del equipo */
+.team {
+    background: #222; /* Fondo oscuro para que resalten los logos */
+    border: none;
+    cursor: pointer;
+}
+
+.team:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px purple;
+}
+.team img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important; /* Muestra el logo completo */
+}
+#track2 .team {
+    width: 140px; 
+    height: 140px; 
+}
 .btn-crear-torneo {
     width: 180px !important; 
     height: 60px !important;  

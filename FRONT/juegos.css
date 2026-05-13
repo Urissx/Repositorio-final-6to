@@ -110,7 +110,7 @@ button.game:active {
     object-position: center;
     mask-image: linear-gradient(to right, black 90%, transparent 100%);
     -webkit-mask-image: linear-gradient(to right, black 90%, transparent 100%);
-    image-rendering: -webkit-optimize-contrast; /* Mejora la nitidez en Chrome/Edge */
+    image-rendering: -webkit-optimize-contrast;
     image-rendering: crisp-edges;
 }
 
