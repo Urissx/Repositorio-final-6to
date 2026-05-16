@@ -131,6 +131,7 @@ body {
     gap: 10px;
     transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
     padding: 10px 0;
+    will-change: transform;
     width: max-content
 }
 #track2 {

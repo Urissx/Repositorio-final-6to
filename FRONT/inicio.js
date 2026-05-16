@@ -5,43 +5,47 @@ function moveCarousel(direction, trackId) {
     isMoving = true;
 
     const track = document.getElementById(trackId);
-    // Seleccionamos el primer hijo real para medirlo exactamente (sea juego o equipo)
     const firstItem = track.firstElementChild;
     
-    // Calculamos el ancho exacto incluyendo el espacio entre elementos (gap/margin)
-    const style = window.getComputedStyle(firstItem);
-    const marginRight = parseFloat(style.marginRight) || 0;
-    const marginLeft = parseFloat(style.marginLeft) || 0;
-    const itemFullWidth = firstItem.offsetWidth + marginRight + marginLeft; 
+    if (!firstItem) {
+        isMoving = false;
+        return;
+    }
+
+    const itemStyle = window.getComputedStyle(firstItem);
+    const marginRight = parseFloat(itemStyle.marginRight) || 0;
+    const marginLeft = parseFloat(itemStyle.marginLeft) || 0;
+    const itemWidth = firstItem.offsetWidth + marginRight + marginLeft; 
+
+    const trackStyle = window.getComputedStyle(track);
+    const gap = parseFloat(trackStyle.gap) || 0;
+    const itemFullWidth = itemWidth + gap; 
 
     if (direction === 1) {
-        // Movimiento hacia adelante
         track.style.transition = "transform 0.4s cubic-bezier(0.25, 1, 0.5, 1)";
         track.style.transform = `translateX(-${itemFullWidth}px)`;
 
         setTimeout(() => {
             track.style.transition = "none";
-            track.appendChild(track.firstElementChild); // Mueve al final
+            track.appendChild(track.firstElementChild);
             track.style.transform = `translateX(0)`;
             isMoving = false;
         }, 400);
     } else {
-        // Movimiento hacia atrás
         track.style.transition = "none";
-        track.prepend(track.lastElementChild); // Mueve al principio antes de animar
+        track.prepend(track.lastElementChild);
         track.style.transform = `translateX(-${itemFullWidth}px)`;
 
-        // Forzamos un "reflow" para que el navegador registre el cambio de posición instantáneo
-        track.offsetHeight; 
-
-        setTimeout(() => {
-            track.style.transition = "transform 0.4s cubic-bezier(0.25, 1, 0.5, 1)";
-            track.style.transform = `translateX(0)`;
-            setTimeout(() => { isMoving = false; }, 400);
-        }, 10);
+        // Usamos requestAnimationFrame para que el navegador procese el cambio de posición suavemente
+        requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+                track.style.transition = "transform 0.4s cubic-bezier(0.25, 1, 0.5, 1)";
+                track.style.transform = `translateX(0)`;
+                setTimeout(() => { isMoving = false; }, 400);
+            });
+        });
     }
 }
-
 function irAlJuego(elemento) {
     const url = elemento.getAttribute("data-url");
     if (url) {
@@ -50,3 +54,6 @@ function irAlJuego(elemento) {
         console.error("No se definió una URL");
     }
 }
+const trackStyle = window.getComputedStyle(track);
+const gap = parseFloat(trackStyle.gap) || 0;
+const itemFullWidth = itemWidth + gap;
