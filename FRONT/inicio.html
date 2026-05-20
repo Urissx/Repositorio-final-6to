@@ -19,18 +19,20 @@
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <button class="btn btn-outline-success" data-url="iniciosesion.html" onclick="irAlJuego(this)">Iniciar Sesion</button>
-        <button class="btn btn-outline-success" data-url="registro.html" onclick="irAlJuego(this)">Registrate</button>
+        <div id="botones-sesion" class="d-flex gap-2">
+            <button class="btn btn-outline-success" data-url="iniciosesion.html" onclick="irAlJuego(this)">Iniciar Sesion</button>
+            <button class="btn btn-outline-success" data-url="registro.html" onclick="irAlJuego(this)">Registrate</button>
+        </div>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown" id="menu-usuario" style="display: none !important;">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"> Menu </a>
                         <ul class="dropdown-menu dropdown-menu-dark">
                             <li><a class="dropdown-item" href="perfil.html">Perfil</a></li>
                             <li><a class="dropdown-item" href="config.html">Configuración</a></li>
-                            <li><a class="dropdown-item" href="stats.html">Estadísticas</a></li>
                             <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item" href="ayuda.html">Ayuda</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="cerrarSesion(event)">Cerrar Sesión</a></li>
                         </ul>
                     </li>
                 </ul>
